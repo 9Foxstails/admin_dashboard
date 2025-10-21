@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+}
+
+/*GENERAL*/
+.pageLayoutGrid{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 4fr;
+
+  border: 1px solid black;
+}
+/*HEADER*/
+header{
+  grid-area: 1/2/2/-1;
+  display: grid;
+
+  border: 1px solid red;
+  background-color: rgba(209, 92, 92, 0.555);
+}
+/*DASHBOARD*/
+nav{
+  grid-area: 1/1/-1/2;
+  display: grid;
+
+  background-color: rgba(136, 233, 233, 0.596);
+  border: 1px solid salmon;
+}
+
+/*MAIN*/
+main{
+  grid-area: 2/2/-1/-1;
+
+  background-color: rgba(255, 228, 196, 0.678);
+  border: 1px green solid
+}
