@@ -1,10 +1,13 @@
 /*GENERAL*/
 *{
   margin: 0;
+  background-blend-mode: multiply;
 }
 :root{
   --padding-left: 1rem;
   --padding-top: 1rem;
+  --main-content-colour: #070F34;
+  --header-colour: #9201CB;
 }
 .pageLayoutGrid{
   min-height: 100vh;
@@ -23,9 +26,8 @@ header{
   padding-top: var(--padding-top);
   padding-left: calc(var(--padding-left)*2);
 
-  border: 1px solid red;
-  background-color: rgba(209, 92, 92, 0.555);
-}
+  background: #9201CB;
+background: linear-gradient(360deg, rgba(146, 1, 203, 1) 20%, rgba(57, 10, 106, 1) 64%, rgba(7, 15, 52, 1) 100%);}
 
 .headerTop>input{
   border-radius: 20px;
@@ -44,9 +46,14 @@ nav{
   gap: 1rem;
   padding-left: var(--padding-left);
   padding-top: var(--padding-top);
+  z-index: 1;
 
-  background-color: rgba(136, 233, 233, 0.596);
-  border: 1px solid salmon;
+  background-color:rgb(10, 8, 8);
+  background-blend-mode: multiply;
+  border-right: 1px solid #000000d0;
+}
+nav:hover{
+  box-shadow: 10px 2px 20px 2px #d1ff04c7;
 }
 .logo{
   border: 1px solid black;
@@ -75,6 +82,6 @@ nav{
 main{
   grid-area: 2/2/-1/-1;
 
-  background-color: rgba(255, 228, 196, 0.678);
-  border: 1px green solid
+ background: #070F34;
+background: linear-gradient(359deg, rgba(7, 15, 52, 1) 60%, rgba(146, 1, 203, 1) 100%);
 }
