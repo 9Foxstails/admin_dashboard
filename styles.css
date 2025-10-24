@@ -21,8 +21,20 @@ svg {
   margin: 0px;
 }
 
+
 input {
   color: black;
+  outline: none;
+}
+
+input:focus {
+  border: 1px inset var(--color-neon-yellow);
+  filter: drop-shadow(0px 0px 4px #d1ff04d0);
+}
+
+::placeholder {
+  font-family: 'Megrim';
+  font-weight: bold;
 }
 
 :root {
@@ -31,6 +43,12 @@ input {
   --main-content-colour: #070F34;
   --header-colour: #9201CB;
   --color-neon-yellow: #d1ff04;
+  --transition-time: 0.25s;
+  --gap-general: 20px;
+}
+
+body {
+  position: relative;
 }
 
 .pageLayoutGrid {
@@ -45,25 +63,133 @@ input {
 /*HEADER*/
 
 header {
-  grid-area: 1/2/2/-1;
+  font-family: 'Megrim';
+  font-weight: bold;
+
   display: grid;
-  grid-template-rows: 1fr 2fr 3fr;
+  grid-template-rows: 1fr 2fr;
   padding-top: var(--padding-top);
   padding-left: calc(var(--padding-left)*2);
+  padding-right: calc(var(--padding-left)*2);
 
   background: #9201CB;
   background: linear-gradient(360deg, rgba(146, 1, 203, 1) 20%, rgba(57, 10, 106, 1) 64%, rgba(7, 15, 52, 1) 100%);
 }
 
 .headerTop>input {
+  font-family: 'Megrim';
+  font-weight: bold;
   border-radius: 20px;
+  height: 30px;
+  padding-left: var(--padding-left);
 }
 
 .headerTop {
-  display: flex;
-  grid-template-columns: repeat(5, 1fr);
+  display: grid;
+  grid-template-columns: 30px 4fr 2fr 1fr 1fr 1fr;
+  white-space: nowrap;
+  align-items: center;
+  gap: 10px;
+
 }
 
+.headerTop>div {
+  justify-self: end;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.headerTop>div>p {
+  transition: all 0.4s;
+}
+
+.headerTop>div>svg {
+  transition: all var(--transition-time);
+}
+
+.headerTop>svg {
+  cursor: pointer;
+  transition: all var(--transition-time);
+}
+
+.headerTop>svg:hover {
+  filter: drop-shadow(0px 0px 4px #d1ff04d0);
+}
+
+.headerTop>div:hover>:not(img) {
+  font-size: large;
+  filter: drop-shadow(0px 0px 4px #d1ff04d0);
+}
+
+.headerTop>div>img {
+  width: 40px;
+  transition: all var(--transition-time);
+}
+
+.headerTop>div>img:hover {
+  filter: drop-shadow(0px 0px 4px #d1ff04d0);
+}
+
+.headerBot {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-self: ce;
+  align-items: center;
+  border-bottom: 2px white solid;
+}
+
+.headerBotLeft {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-self: start;
+  align-items: center;
+  gap: 20px
+}
+
+.headerBotLeft>img {
+  width: 60px;
+}
+
+.headerBotLeft>div {
+  display: grid;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.headerBotLeft>div>div:nth-child(1) {
+  font-size: small;
+}
+
+.headerBotLeft>div>div:nth-child(2) {
+  font-size: x-large;
+}
+
+.headerBotRight {
+  display: grid;
+  justify-self: end;
+  justify-items: end;
+  grid-template-columns: repeat(3, auto);
+  gap: var(--gap-general);
+}
+
+.buttonLike {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  border: 2px white outset;
+  background-color: #111d52;
+  cursor: pointer;
+}
+
+.buttonLike:active {
+  text-shadow: 2px 2px 10px #d1ff04;
+  filter: drop-shadow(0px 0px 4px #d1ff04);
+  border: 2px inset var(--color-neon-yellow);
+}
 
 /*DASHBOARD*/
 nav {
@@ -83,7 +209,7 @@ nav {
 
   background-color: rgb(10, 8, 8);
   border-right: 2px ridge #000000d0;
-  
+
 }
 
 .logo {
@@ -97,17 +223,13 @@ nav {
   text-shadow: 2px 2px 10px #d1ff0400;
 }
 
-.logoSvg{
+.logoSvg {
   position: absolute;
   align-self: center;
   justify-self: start;
   width: 5em;
   fill: url(#my-cool-gradient);
   z-index: -1;
-}
-
-.logoSvg:hover{
-
 }
 
 .dashboardLinks {
@@ -128,18 +250,18 @@ nav {
 }
 
 .dashboardLinks>div,
-.dashboardHelp>div{
+.dashboardHelp>div {
   display: flex;
   align-items: center;
   min-height: 1.8rem;
   gap: 4px;
+  transition: all var(--transition-time);
 }
 
 .dashboardLinks>div:hover>svg,
 .dashboardHelp>div:hover>svg,
-.logo:hover{
+.logo:hover {
   filter: drop-shadow(0px 0px 4px #d1ff04d0);
-  transition: all 0.5s;
 }
 
 nav:hover {
@@ -150,7 +272,6 @@ h1:hover,
 nav>div>div:hover {
   text-shadow: 2px 2px 10px #d1ff04;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
 }
 
 nav>div>div:hover {
@@ -168,5 +289,12 @@ main {
   grid-area: 2/2/-1/-1;
 
   background: #070F34;
-  background: linear-gradient(359deg, rgba(7, 15, 52, 1) 60%, rgba(146, 1, 203, 1) 100%);
+  background: linear-gradient(360deg, rgba(7, 15, 52, 1) 40%, rgba(146, 1, 203, 1) 100%);
+}
+
+/*FOOTER*/
+.footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
