@@ -32,6 +32,7 @@ input:focus {
   filter: drop-shadow(0px 0px 4px #d1ff04d0);
 }
 
+
 ::placeholder {
   font-family: 'Megrim';
   font-weight: bold;
@@ -43,12 +44,15 @@ input:focus {
   --main-content-colour: #070F34;
   --header-colour: #9201CB;
   --color-neon-yellow: #d1ff04;
+  --color-neon-red: #FF3131;
+  --color-neon-green: #39FF14;
   --transition-time: 0.25s;
   --gap-general: 20px;
 }
 
 body {
   position: relative;
+  
 }
 
 .pageLayoutGrid {
@@ -286,10 +290,108 @@ nav>div>div:hover {
 
 /*MAIN*/
 main {
+  font-family: 'Megrim';
+  font-weight: bold;
   grid-area: 2/2/-1/-1;
 
   background: #070F34;
   background: linear-gradient(360deg, rgba(7, 15, 52, 1) 40%, rgba(146, 1, 203, 1) 100%);
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  padding: var(--padding-left);
+}
+
+main>:first-child{
+  border-right: 2px white solid;
+  
+}
+main>div h2{
+  font-size: 2rem;
+  padding-left: var(--padding-left);
+}
+
+.cardContainer{
+  padding: var(--padding-left);
+  display: grid;
+  gap: var(--gap-general);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card{
+  border-radius: 10px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.185);
+  display: flex;
+  transition: all var(--transition-time);
+}
+.card h3{
+  font-size: 1.5rem;
+  border-bottom: 2px white solid;
+}
+
+.card>div{
+  padding: var(--padding-left);
+  display: grid;
+  gap: calc(var(--gap-general)/2);
+  align-content: space-around;
+  width: 100%;
+  
+}
+.card svg{
+  transition: all var(--transition-time);
+}
+.card svg:hover{
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 4px #d1ff04d0);
+}
+.card:hover{
+  box-shadow: 0px 0px 20px 4px #d1ff0485
+}
+.cardIcons{
+  display: flex;
+  justify-self: end;
+  position: relative;
+}
+.tooltip{
+  white-space: nowrap;
+  visibility:hidden;
+  position: absolute;
+  opacity: 0;
+  left: 0px;
+  transition: all var(--transition-time);
+}
+.icon{
+  transition: all var(--transition-time);
+}
+.icon:hover .tooltip{
+  visibility: visible;
+  opacity: 100%;
+}
+.jobComplete{
+  position: relative;
+}
+.jobIncomplete{
+  position: relative;
+}
+
+.jobComplete::before{
+  content: "";
+  display: inline-block;
+  height: 200px;
+  width: 0.5rem;
+  border: 0px transparent;
+  border-radius: 10px 0px 0px 10px;
+  background-color: var(--color-neon-green);
+}
+.jobIncomplete::before{
+  content: "";
+  display: inline-block;
+  height: 200px;
+  width: 0.5rem;
+  border-radius: 10px 0px 0px 10px;
+  background-color: var(--color-neon-red);
 }
 
 /*FOOTER*/
