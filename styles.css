@@ -20,7 +20,6 @@ svg {
   margin: 0px;
 }
 
-
 input {
   color: black;
   outline: none;
@@ -30,7 +29,6 @@ input:focus {
   border: 1px inset var(--color-neon-yellow);
   filter: drop-shadow(0px 0px 4px #d1ff04d0);
 }
-
 
 ::placeholder {
   font-family: 'Megrim';
@@ -307,8 +305,6 @@ main>div h2 {
   padding-left: var(--padding-left);
 }
 
-
-
 .cardContainer {
   padding: var(--padding-left);
   display: grid;
@@ -402,8 +398,7 @@ main>div h2 {
   background-color: var(--color-neon-red);
 }
 
-
-.newsContainer{
+.newsContainer {
   display: grid;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.185);
@@ -412,32 +407,37 @@ main>div h2 {
   margin-left: var(--padding-left);
   margin-bottom: var(--padding-left);
 }
-.newsContainer>div>:first-child{
+
+.newsContainer>div>:first-child {
   padding-bottom: calc(var(--padding-left)/2);
 }
-.newsContainer>div>:last-child{
+
+.newsContainer>div>:last-child {
   padding-bottom: var(--padding-left);
   border-bottom: 2px white solid;
 }
 
-.newsContainer>div{
+.newsContainer>div {
   padding-left: var(--padding-left);
   padding-right: var(--padding-left);
   padding-top: var(--padding-left);
 }
-.newsContainer>:last-child>div{
+
+.newsContainer>:last-child>div {
   padding-bottom: calc(var(--padding-left));
   border: none;
 }
-.newsContainer h3{
+
+.newsContainer h3 {
   transition: all var(--transition-time);
 }
-.newsContainer h3:hover{
+
+.newsContainer h3:hover {
   text-shadow: 2px 2px 10px #d1ff04;
   cursor: pointer;
 }
 
-.peopleContainer{
+.peopleContainer {
   display: grid;
   padding: var(--padding-left);
   border-radius: 10px;
@@ -447,24 +447,29 @@ main>div h2 {
   margin-left: var(--padding-left);
   gap: var(--gap-general);
 }
-.peopleContainer>div{
+
+.peopleContainer>div {
   display: flex;
   align-items: start;
   gap: var(--gap-general);
 }
-.peopleContainer>div>div>:first-child{
+
+.peopleContainer>div>div>:first-child {
   transition: all var(--transition-time);
   font-size: 1.25rem;
   padding-bottom: calc(var(--gap-general)/4);
 }
-.peopleContainer>div>div>:first-child:hover{
+
+.peopleContainer>div>div>:first-child:hover {
   text-shadow: 2px 2px 10px #d1ff04;
   cursor: pointer;
 }
-.peopleContainer img{
+
+.peopleContainer img {
   padding-top: 4px;
   width: 30px;
 }
+
 /*FOOTER*/
 .footer {
   border-right: white 2px solid;
