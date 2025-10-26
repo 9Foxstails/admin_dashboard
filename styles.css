@@ -5,7 +5,6 @@
   font-style: normal;
 }
 
-
 /*GENERAL*/
 * {
   margin: 0;
@@ -52,7 +51,7 @@ input:focus {
 
 body {
   position: relative;
-  
+
 }
 
 .pageLayoutGrid {
@@ -283,11 +282,6 @@ nav>div>div:hover {
   text-decoration: underline;
 }
 
-
-
-
-
-
 /*MAIN*/
 main {
   font-family: 'Megrim';
@@ -303,80 +297,93 @@ main {
   padding: var(--padding-left);
 }
 
-main>:first-child{
+main>:first-child {
   border-right: 2px white solid;
-  
+
 }
-main>div h2{
+
+main>div h2 {
   font-size: 2rem;
   padding-left: var(--padding-left);
 }
 
-.cardContainer{
+
+
+.cardContainer {
   padding: var(--padding-left);
   display: grid;
   gap: var(--gap-general);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.card{
+.card {
   border-radius: 10px;
   height: 200px;
   background-color: rgba(255, 255, 255, 0.185);
   display: flex;
   transition: all var(--transition-time);
 }
-.card h3{
+
+.card h3 {
   font-size: 1.5rem;
   border-bottom: 2px white solid;
 }
 
-.card>div{
+.card>div {
   padding: var(--padding-left);
   display: grid;
   gap: calc(var(--gap-general)/2);
   align-content: space-around;
   width: 100%;
-  
+
 }
-.card svg{
+
+.card svg {
   transition: all var(--transition-time);
 }
-.card svg:hover{
+
+.card svg:hover {
   cursor: pointer;
   filter: drop-shadow(0px 0px 4px #d1ff04d0);
 }
-.card:hover{
+
+.card:hover {
   box-shadow: 0px 0px 20px 4px #d1ff0485
 }
-.cardIcons{
+
+.cardIcons {
   display: flex;
   justify-self: end;
   position: relative;
 }
-.tooltip{
+
+.tooltip {
   white-space: nowrap;
-  visibility:hidden;
+  visibility: hidden;
   position: absolute;
   opacity: 0;
   left: 0px;
   transition: all var(--transition-time);
 }
-.icon{
+
+.icon {
   transition: all var(--transition-time);
 }
-.icon:hover .tooltip{
+
+.icon:hover .tooltip {
   visibility: visible;
   opacity: 100%;
 }
-.jobComplete{
-  position: relative;
-}
-.jobIncomplete{
+
+.jobComplete {
   position: relative;
 }
 
-.jobComplete::before{
+.jobIncomplete {
+  position: relative;
+}
+
+.jobComplete::before {
   content: "";
   display: inline-block;
   height: 200px;
@@ -385,7 +392,8 @@ main>div h2{
   border-radius: 10px 0px 0px 10px;
   background-color: var(--color-neon-green);
 }
-.jobIncomplete::before{
+
+.jobIncomplete::before {
   content: "";
   display: inline-block;
   height: 200px;
@@ -394,9 +402,70 @@ main>div h2{
   background-color: var(--color-neon-red);
 }
 
+
+.newsContainer{
+  display: grid;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.185);
+  transition: all var(--transition-time);
+  margin-top: var(--padding-top);
+  margin-left: var(--padding-left);
+  margin-bottom: var(--padding-left);
+}
+.newsContainer>div>:first-child{
+  padding-bottom: calc(var(--padding-left)/2);
+}
+.newsContainer>div>:last-child{
+  padding-bottom: var(--padding-left);
+  border-bottom: 2px white solid;
+}
+
+.newsContainer>div{
+  padding-left: var(--padding-left);
+  padding-right: var(--padding-left);
+  padding-top: var(--padding-left);
+}
+.newsContainer>:last-child>div{
+  padding-bottom: calc(var(--padding-left));
+  border: none;
+}
+.newsContainer h3{
+  transition: all var(--transition-time);
+}
+.newsContainer h3:hover{
+  text-shadow: 2px 2px 10px #d1ff04;
+  cursor: pointer;
+}
+
+.peopleContainer{
+  display: grid;
+  padding: var(--padding-left);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.185);
+  transition: all var(--transition-time);
+  margin-top: var(--padding-top);
+  margin-left: var(--padding-left);
+  gap: var(--gap-general);
+}
+.peopleContainer>div{
+  display: flex;
+  align-items: start;
+  gap: var(--gap-general);
+}
+.peopleContainer>div>div>:first-child{
+  transition: all var(--transition-time);
+  font-size: 1.25rem;
+  padding-bottom: calc(var(--gap-general)/4);
+}
+.peopleContainer>div>div>:first-child:hover{
+  text-shadow: 2px 2px 10px #d1ff04;
+  cursor: pointer;
+}
+.peopleContainer img{
+  padding-top: 4px;
+  width: 30px;
+}
 /*FOOTER*/
 .footer {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  border-right: white 2px solid;
 }
